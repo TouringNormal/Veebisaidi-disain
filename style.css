@@ -7,6 +7,7 @@ body{
 
 .header-wrapper {
   position: relative;
+  align-items: center;
   top: 0;
   left: 0;
   width: 100%;
@@ -22,19 +23,27 @@ body{
   height: 80px;
   padding: 0 30px 0 30px;
   margin: 0 auto;
-  
 }
 
-@media (max-width: 1023px){
+
+
+
+@media screen and (max-width: 1023px){
 .header-mobile {
     display: block;
     position: fixed;
-    z-index: 999;
+    z-index: 20;
     left: 0;
     right: 0;
     top: 0;
     height: 60px;
 }
+}
+
+@media screen and (min-width: 1024px){
+  .header-mobile{
+    display: none;
+  }
 }
 
 .menutoggler-mobile-wrapper{
@@ -205,6 +214,8 @@ header.scrolled .wta-ranking{
   color: black;
 }
 
+
+
 header.scrolled .select-language{
   border: solid 1px rgba(0, 0, 0, 0.5);
   transition: 0.3s ease-in-out;
@@ -349,7 +360,7 @@ header.scrolled nav a::after{
   left: 40px;
   right: 55%;
   top: 50%;
-  z-index: 2;
+  z-index: 9;
   transform: translateY(-50%);
   color: #fff;
   text-align: center;
@@ -391,12 +402,9 @@ header.scrolled nav a::after{
   z-index: 4;
   background-color: transparent;
   top: -120px;
-
-
 }
 
-.sponsor-images{
-  
+.sponsor-images {
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -404,19 +412,53 @@ header.scrolled nav a::after{
   width: 100%;
   position: absolute;
   background-color: #ffffff;
-  clip-path: polygon(0 25%, 100%  0, 100% 75%, 0 90%);
+  clip-path: polygon(0 25%, 100% 0, 100% 75%, 0 90%);
   padding: auto;
 }
 
-.sponsors img{
-  margin: 15px; /* add margin between images */
-  max-width: 100%; /* make sure images don't exceed their container */
+.sponsors img {
+  margin: 15px; 
+  max-width: 100%; 
   height: auto;
   width: auto;
   size: auto;
   z-index: 4;
   position: relative;
 }
+
+@media screen and (max-width: 1023px) {
+  .sponsor-images-mobile {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  position: absolute;
+  background-color: #ffffff;
+  clip-path: polygon(0 25%, 100% 0, 100% 75%, 0 90%);
+  padding: auto;
+  }
+  .sponsor-images {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .sponsor-images-mobile {
+    display: none;
+  }
+  .sponsor-images {
+    display: flex;
+  }
+}
+.mob-pic {
+  display: none;
+}
+
+.mob-pic:first-child {
+  display: block;
+}
+
 
 .pattern {
   width: auto;

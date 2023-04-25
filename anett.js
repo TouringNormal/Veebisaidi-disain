@@ -19,3 +19,26 @@ window.addEventListener('scroll', function() {
     logoImage.src = 'anett-logo-white.svg';
   }
 });
+
+document.addEventListener("DOMContentLoaded", function() {
+  // Set slider variables
+  var sliderIndex = 1;
+  var sliderImages = document.getElementsByClassName("mob-pic");
+
+  // Set timer for slider
+  setInterval(function() {
+    // Hide current image
+    sliderImages[sliderIndex - 1].style.display = "none";
+
+    // Increment slider index
+    sliderIndex++;
+
+    // Reset slider index if it exceeds number of images
+    if (sliderIndex > sliderImages.length) {
+      sliderIndex = 1;
+    }
+
+    // Show next image
+    sliderImages[sliderIndex - 1].style.display = "block";
+  }, 3000);
+});
